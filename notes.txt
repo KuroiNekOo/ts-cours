@@ -1,0 +1,24 @@
+# Convertir un projet JS en TS (chap11)
+
+npm i -D typescript
+
+tsc --init
+
+### tsconfig
+- include ['src'] (ajouter les dossier dans la compilation)
+- sourceMap true (permet de faire un lien entre le fichier JS et TS dans la navigateur pour pouvoir debug plus facilement)
+- removeComments true
+- downlevelIteration true (donne des outils de debug lors de for-of, spread ou decustruction)
+- target 2016
+- module ESNext (ESM, dernière version de JS)
+- esModuleInterop true (possibilité d'utiliser commonJS et ESM ensemble)
+- forceConsistentCasingInFileNames true
+- strict true (vérification strict des types)
+- skipLibCheck (éviter de vérifier les types des modules)
+- baseUrl './' (chemin de base pour aller chercher les paths)
+- paths [''] (les paths des modules pour les imports)
+
+
+
+sourceMap doit être true obligatoirement pour utiliser les break points avec TS
+Il faut également l'extension Debugger for Chrome
